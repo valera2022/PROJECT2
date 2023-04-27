@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { useEffect } from "react";
 import Book from "./Book";
-
+import AddBook from "./AddBook";
 function BooksIndex(){
     const [books,setBooks] =  useState([])
 
@@ -17,6 +17,8 @@ function BooksIndex(){
     return(
         <div>
             {booksList}
+
+          <AddBook/>
            
 
         </div>
