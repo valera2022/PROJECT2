@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Book({book}){
+function Book({bookName}){
     return(
         <div>
 

@@ -11,8 +11,8 @@ function BooksIndex(){
         .then(data=>{ setBooks(data)})
     },[])
 
-    let booksList = books.map((book)=>{
-        return <ul>{book.name}</ul>
+    let booksList = books.map((book)=>{ return <Book bookName={book.name}/>
+      
     })
     return(
         <div>
