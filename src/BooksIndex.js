@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import { useEffect } from "react";
 import Book from "./Book";
 import AddBook from "./AddBook";
+import { Link,Route } from "react-router-dom";
 function BooksIndex(){
     const [books,setBooks] =  useState([])
 
@@ -16,9 +17,11 @@ function BooksIndex(){
     })
     return(
         <div>
+            <h1>Here Are Your Books</h1>
             {booksList}
 
-          <AddBook/>
+            <Link to="/form"><button >Add a book</button></Link>
+            
            
 
         </div>
