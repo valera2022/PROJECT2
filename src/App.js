@@ -4,7 +4,7 @@ import React from 'react';
 import  ReactDOM  from 'react';
 import { BrowserRouter,Route,Switch } from 'react-router-dom';
 import Home from './Home';
-import BooksIndex from './BooksIndex';
+import BooksList from './BooksList';
 import NavBar from './NavBar';
 import BookShow from './BookShow';
 import { ToastContainer } from 'react-toastify';
@@ -23,7 +23,7 @@ function App() {
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/form" component={AddBook}/>
-      <Route exact path="/books" component={BooksIndex}/>
+      <Route exact path="/books" component={BooksList}/>
       <Route  path="/books/:ID" component={BookShow}/>
 
       </Switch>

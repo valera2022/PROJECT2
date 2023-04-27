@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Book from "./Book";
 import AddBook from "./AddBook";
 import { Link,Route } from "react-router-dom";
-function BooksIndex(){
+function BooksList(){
     const [books,setBooks] =  useState([])
 
     useEffect(()=>{
@@ -18,7 +18,7 @@ function BooksIndex(){
     return(
         <div>
             <h1>Here Are Your Books</h1>
-            {booksList}
+           <ul> {booksList}</ul>
 
             <Link to="/form"><button >Add a book</button></Link>
             
@@ -28,4 +28,4 @@ function BooksIndex(){
     )
 }
 
-export default BooksIndex
+export default BooksList

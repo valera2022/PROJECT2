@@ -18,7 +18,7 @@ function BookShow(props){
     //   })
     return(
         <div>
-          <img src={img}/>
+          <img  width="799.99" height="1134"src={img}/>
           <h1>{name}</h1>
           <h2>{"by " +  author}</h2>
           <p>{"Published on " + date}</p>
