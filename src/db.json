@@ -1,0 +1,18 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "name": "The Silver Chair",
+        "author": "CS lewis",
+        "date": "1953",
+        "img": "https://i.ebayimg.com/images/g/2ToAAOSwc6FhaXaq/s-l500.jpg"
+      },
+      {
+        "id": 1,
+        "name": "The Age of Reason",
+        "author": "Thomas Paine",
+        "date": "1794",
+        "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fkbimages1-a.akamaihd.net%2F6fa8262c-7151-456f-8f73-4d5d8b5e3f36%2F353%2F569%2F90%2FFalse%2Fthe-age-of-reason-45.jpg&f=1&nofb=1&ipt=859080a24a1ba5bc22a5e30c556b603d000c2ef4397f0fe395d938b3bbbf7fba&ipo=images"
+      }
+    ]
+  }
