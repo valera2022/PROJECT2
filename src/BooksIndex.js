@@ -11,7 +11,7 @@ function BooksIndex(){
         .then(data=>{ setBooks(data)})
     },[])
 
-    let booksList = books.map((book)=>{ return <Book bookName={book.name}/>
+    let booksList = books.map((book)=>{ return <Book book={book}/>
       
     })
     return(

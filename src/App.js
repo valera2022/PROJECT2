@@ -6,6 +6,7 @@ import { BrowserRouter,Route } from 'react-router-dom';
 import Home from './Home';
 import BooksIndex from './BooksIndex';
 import NavBar from './NavBar';
+import BookShow from './BookShow';
 
 
 
@@ -16,7 +17,7 @@ function App() {
       <NavBar/>
       <Route exact path="/" component={Home}/>
       <Route exact path="/books" component={BooksIndex}/>
-      
+      <Route  path="/books/:ID" component={BookShow}/>
       
     </div>
     </BrowserRouter>

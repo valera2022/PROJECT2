@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-
-function Book({bookName}){
+function Book({book}){
     return(
-        <div>
-
-        </div>
+      <Link to={`/books/${book.id}`}>
+        <ul>{book.name}</ul>
+      </Link>
 
     )
 }
