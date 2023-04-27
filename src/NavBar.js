@@ -25,14 +25,14 @@ function NavBar() {
         </NavLink>
        
         <NavLink
-          to="/movies"
+          to="/books"
           exact
           style={style}
           activeStyle={{
             background: "red",
           }}
         className="NavLink">
-          Movies
+          Books
         </NavLink>
       </div>
     );
