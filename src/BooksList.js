@@ -17,8 +17,8 @@ function BooksList(){
     })
     return(
         <div>
-            <div id="booksHeader">
-            <h1>Here Are Your Books</h1>
+            <div className="booksHeader">
+            <h1 className="headersText">Here Are Your Books</h1>
             </div>
            <ul> {booksList}</ul>
 
