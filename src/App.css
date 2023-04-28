@@ -47,7 +47,16 @@ color:#a52a2a
 }
 
 div#booksHeader{
-  border: 5px outset #8b008b;
+  /* display: flex; */
+ 
+  border: 2px groove #8b008b;
   background-color: #00cc99;    
-  text-align: center;
+  /* text-align: center; */
+  /* width: 1000px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 150px;
+  margin-left: 200px;
+ 
+  
 }
