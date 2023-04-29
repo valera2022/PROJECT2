@@ -3,10 +3,11 @@ import { useHistory,Route } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
-function AddBook(){
-    const[books,setBooks]= useState([])
+function AddBook(props){
+    // const[books,setBooks]= useState([])
     const history = useHistory()
-
+    let books = props.location.state
+    let setBooks = props.location.setState
 
     function HandleSubmit(e){
         e.preventDefault()

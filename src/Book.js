@@ -5,7 +5,7 @@ function Book({book}){
     return(
       <Link to={`/books/${book.id}`}>
        
-        <li style={{"style":"square"}}>{book.name}</li>
+        <li >{book.name}</li>
        
       </Link>
 
