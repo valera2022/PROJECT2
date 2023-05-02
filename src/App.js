@@ -15,9 +15,10 @@ import { toast } from "react-toastify";
 
 
 
-function App() {
+function App(props) {
   const [books,setBooks] =  useState([])
   const history = useHistory()
+
 
   useEffect(()=>{
     fetch("http://localhost:8000/books")
@@ -49,9 +50,9 @@ function handleForm(formData){
   .then(r=> r.json())
   .then(dat=> { 
     setBooks([...books,dat])
-    toast.success("You just added a book!")
-    history.push('/books')                                  })
-  .catch(r=> toast.error("Oops, Failed to add Book " + r.message))
+    toast.success("You just added a book!");
+    history.push('/books');                                  })
+  .catch(r=> toast.error("Oops, something went wrong " + r.message))
 }
 
 
@@ -66,7 +67,7 @@ function handleForm(formData){
       <Route exact path="/form"> <AddBook books={books} onForm={handleForm}/> </Route>
       <Route exact path="/books" ><BooksList books={books} />
       </Route>
-      <Route  path="/books/:ID" component={BookShow}/>
+      <Route  path="/books/:ID" > <BookShow books={books}/> </Route>
 
       </Switch>
                
