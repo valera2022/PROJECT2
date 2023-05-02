@@ -3,57 +3,46 @@ import { useHistory,Route } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
-function AddBook(props){
+function AddBook({books,setBooks}){
     // const[books,setBooks]= useState([])
+    const [name ,setName]= useState("")
+    const [author,setAuthor]= useState("")
+    const [date,setDate] = useState("")
+    const [img,setImg] = useState("")
     const history = useHistory()
-    let books = props.location.state
-    let setBooks = props.location.setState
+   
 
-    function HandleSubmit(e){
+    function handleSubmit(e){
         e.preventDefault()
        
         // console.log( e.target.name.value)
         let formData = {
-            name: e.target.name.value,
-            author: e.target.author.value,
-            date: e.target.date.value,
-            img: e.target.img.value
+            name,
+            author,
+            date,
+            img
         }
 
-         fetch("http://localhost:8000/books",{
-              method: "POST",
-              headers: 
-              { "Content-Type": "application/json" },
-              body: JSON.stringify(
-                formData
-              )
         
-        
-              
-            })
-            .then(r=> r.json())
-            .then(dat=> { 
-              setBooks(...books,dat)
-              toast.success("You just added a book!")
-              history.push('/books')                                  })
-            .catch(r=> toast.error("Oops, Failed to add Book " + r.message))
 
     }
+    //make form a control from
 return(<div>
         
         <h1>Add A Book</h1>
-        <form onSubmit={HandleSubmit}>
+        <form onSubmit={handleSubmit}> 
         <div>
-            <input  type="text" name="name" placeholder="Title"  />
+            <input  type="text" name="name" value={name} onChange={e=> setName(e.target.value)
+             } placeholder="Title"  />
           </div>
           <div>
-            <input required type="text" name="author" placeholder="Author" />
+            <input required type="text" name="author" value={author} onChange={e=> setAuthor(e.target.value)} placeholder="Author" />
           </div>
           <div>
-            <input required type="text" name="date" placeholder="Date" />
+            <input required type="text" name="date" value={date} onChange={e=>setDate(e.target.value)} placeholder="Date" />
           </div>
           <div>
-            <input required type="text" name="img" placeholder="Image" />
+            <input required type="text" name="img" value={img} onChange={e=>setImg(e.target.value)} placeholder="Image" />
           </div>
           <input type="submit" value="Submit"  />
         </form>

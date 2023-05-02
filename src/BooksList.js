@@ -3,14 +3,10 @@ import { useEffect } from "react";
 import Book from "./Book";
 import AddBook from "./AddBook";
 import { Link,Route } from "react-router-dom";
-function BooksList(){
-    const [books,setBooks] =  useState([])
+function BooksList({books}){
+   
 
-    useEffect(()=>{
-        fetch("http://localhost:8000/books")
-        .then(r=> r.json())
-        .then(data=>{ setBooks(data)})
-    },[])
+   
 
     let booksList = books.map((book)=>{ return <Book book={book}/>
       
@@ -23,11 +19,8 @@ function BooksList(){
             </div>
            <ul className="ulist"> {booksList}</ul>
 
-            <Link to={{
-                pathname:"/form",
-                state:books,
-                setState:setBooks
-            }}><button >Add a book</button></Link>
+            <Link to="/form"
+               ><button >Add a book</button></Link>
             
            
 

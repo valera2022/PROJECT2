@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 
 function BookShow(props){
-    // debugger;
+    debugger;
     const [book,setBooks]= useState({})
     const {id,name,author,date,img} = book
     // const {params} = useParams()
