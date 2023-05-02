@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React,{useState,useEffect} from 'react';
 import  ReactDOM  from 'react';
-import { BrowserRouter,Route,Switch } from 'react-router-dom';
+import { BrowserRouter,Route,Switch ,useHistory} from 'react-router-dom';
 import Home from './Home';
 import BooksList from './BooksList';
 import NavBar from './NavBar';
@@ -10,11 +10,14 @@ import BookShow from './BookShow';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddBook from './AddBook';
+import { toast } from "react-toastify";
+
 
 
 
 function App() {
   const [books,setBooks] =  useState([])
+  const history = useHistory()
 
   useEffect(()=>{
     fetch("http://localhost:8000/books")
@@ -22,8 +25,33 @@ function App() {
     .then(data=>{ setBooks(data)})
 },[])
 
-function handleForm(data){
+function handleForm(formData){
+  console.log(formData)
   
+
+
+
+
+
+
+
+  fetch("http://localhost:8000/books",{
+    method: "POST",
+    headers: 
+    { "Content-Type": "application/json" },
+    body: JSON.stringify(
+      formData
+    )
+
+
+    
+  })
+  .then(r=> r.json())
+  .then(dat=> { 
+    setBooks([...books,dat])
+    toast.success("You just added a book!")
+    history.push('/books')                                  })
+  .catch(r=> toast.error("Oops, Failed to add Book " + r.message))
 }
 
 

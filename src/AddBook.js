@@ -1,15 +1,15 @@
 import React,{useState} from "react";
 import { useHistory,Route } from "react-router-dom";
-import { toast } from "react-toastify";
 
 
-function AddBook({books,setBooks}){
+
+function AddBook({books,onForm}){
     // const[books,setBooks]= useState([])
     const [name ,setName]= useState("")
     const [author,setAuthor]= useState("")
     const [date,setDate] = useState("")
     const [img,setImg] = useState("")
-    const history = useHistory()
+    // 
    
 
     function handleSubmit(e){
@@ -22,6 +22,10 @@ function AddBook({books,setBooks}){
             date,
             img
         }
+
+        onForm(formData)
+
+
 
         
 
