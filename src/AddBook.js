@@ -17,10 +17,10 @@ function AddBook({books,onForm}){
        
         // console.log( e.target.name.value)
         let formData = {
-            name,
-            author,
-            date,
-            img
+            name:name,
+            author:author,
+            date:date,
+            img:img
         }
 
         onForm(formData)

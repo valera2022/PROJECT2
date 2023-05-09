@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React,{useState,useEffect} from 'react';
 import  ReactDOM  from 'react';
-import { BrowserRouter,Route,Switch ,useHistory} from 'react-router-dom';
+import { BrowserRouter,Route,Switch ,useHistory,useRouteMatch} from 'react-router-dom';
 import Home from './Home';
 import BooksList from './BooksList';
 import NavBar from './NavBar';
@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 function App(props) {
   const [books,setBooks] =  useState([])
   const history = useHistory()
+  // const match = useRouteMatch();
 
 
   useEffect(()=>{
@@ -51,7 +52,7 @@ function handleForm(formData){
   .then(dat=> { 
     setBooks([...books,dat])
     toast.success("You just added a book!");
-    history.push('/books');                                  })
+    history.push("/books");}) //why is not pushing to booklist
   .catch(r=> toast.error("Oops, something went wrong " + r.message))
 }
 
@@ -67,7 +68,7 @@ function handleForm(formData){
       <Route exact path="/form"> <AddBook books={books} onForm={handleForm}/> </Route>
       <Route exact path="/books" ><BooksList books={books} />
       </Route>
-      <Route  path="/books/:ID" > <BookShow books={books}/> </Route>
+      <Route  path="bookShow/:ID"> <BookShow books={books}/> </Route>
 
       </Switch>
                

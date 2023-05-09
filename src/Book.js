@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Book({book}){
     return(
-      <Link to={`/books/${book.id}`}>
+      <Link to={`/bookShow/${book.id}`}>
        
         <li >{book.name}</li>
        
