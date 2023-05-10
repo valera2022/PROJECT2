@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 
 
 function BookShow({books}){
-    debugger;
+    // debugger;
     console.log(books)
     const params =useParams()
     console.log(params)
-    books.find(boo => books.id === params.id)
+   let showBook= books.find(boo => boo.id === parseInt(params.id,10))
+
+   console.log(showBook)
     // const [book,setBooks]= useState({})
     // const {id,name,author,date,img} = book
     // // const {params} = useParams()
@@ -24,10 +26,10 @@ function BookShow({books}){
     //   })
     return(
         <div>
-          <img  width="799.99" height="1134"src={ books[params.Id].img}/>
-          <h1>{ books[params.Id].name}</h1>
-          <h2>{"by " +  books[params.Id].author}</h2>
-          <p>{"Published on " +   books[params.Id].date}</p>
+          <img  width="799.99" height="1134"src={ showBook.img}/>
+          <h1>{showBook.name}</h1>
+          <h2>{"by " +  showBook.author}</h2>
+          <p>{"Published on " +   showBook.date}</p>
 
         </div>
     )

@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 
 
 
-function App(props) {
+function App() {
   const [books,setBooks] =  useState([])
   const history = useHistory()
   // const match = useRouteMatch();
@@ -27,27 +27,18 @@ function App(props) {
     .then(data=>{ setBooks(data)})
 },[])
 
+console.log(books)
 function handleForm(formData){
   console.log(formData)
   
-
-
-
-
-
-
-
-  fetch("http://localhost:8000/books",{
+ fetch("http://localhost:8000/books",{
     method: "POST",
     headers: 
     { "Content-Type": "application/json" },
     body: JSON.stringify(
       formData
     )
-
-
-    
-  })
+})
   .then(r=> r.json())
   .then(dat=> { 
     setBooks([...books,dat])
@@ -68,7 +59,7 @@ function handleForm(formData){
       <Route exact path="/form"> <AddBook books={books} onForm={handleForm}/> </Route>
       <Route exact path="/books" ><BooksList books={books} />
       </Route>
-      <Route  path="bookShow/:ID"> <BookShow books={books}/> </Route>
+      <Route  path="/books/:id"> <BookShow books={books}/> </Route>
 
       </Switch>
                
