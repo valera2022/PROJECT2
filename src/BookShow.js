@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 
 function BookShow({books}){
-    // debugger;
+    
     console.log(books)
     const params =useParams()
     console.log(params)

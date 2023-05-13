@@ -3,21 +3,21 @@ import { useHistory,Route } from "react-router-dom";
 
 
 
-function AddBook({books,onForm}){
+function AddBook({books,onApp}){
   const history = useHistory()
-    // const[books,setBooks]= useState([])
+    
     const [name ,setName]= useState("")
     const [author,setAuthor]= useState("")
     const [date,setDate] = useState("")
     const [img,setImg] = useState("")
-    // 
+    
    const test = useState()
    console.log(test)
 
     function handleSubmit(e){
         e.preventDefault()
        
-        // console.log( e.target.name.value)
+       
         const formData = {
             name:name,
             author:author,
@@ -25,7 +25,7 @@ function AddBook({books,onForm}){
             img:img
         }
 
-        onForm(formData) //change onform name
+        onApp(formData) 
        history.push("/books")
 
 
