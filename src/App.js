@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React,{useState,useEffect} from 'react';
 import  ReactDOM  from 'react';
-import { BrowserRouter,Route,Switch ,useHistory,useRouteMatch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useHistory, useRouteMatch} from 'react-router-dom';
 import Home from './Home';
 import BooksList from './BooksList';
 import NavBar from './NavBar';
@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 function App() {
   const [books,setBooks] =  useState([])
   const history = useHistory()
+  console.log(history)
   // const match = useRouteMatch();
 
 
@@ -43,7 +44,7 @@ function handleForm(formData){
   .then(dat=> { 
     setBooks([...books,dat])
     toast.success("You just added a book!");
-    history.push("/books");}) //why is not pushing to booklist
+    }) //why is not pushing to booklist
   .catch(r=> toast.error("Oops, something went wrong " + r.message))
 }
 

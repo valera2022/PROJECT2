@@ -24,15 +24,39 @@ function BookShow({books}){
     //   let showBook = book.map((bo)=>{
     //     return ( <img src={bo.img}/>)
     //   })
-    return(
-        <div>
-          <img  width="799.99" height="1134"src={ showBook.img}/>
-          <h1>{showBook.name}</h1>
-          <h2>{"by " +  showBook.author}</h2>
-          <p>{"Published on " +   showBook.date}</p>
+    // return(
+      
+        // <div>
+        //   <img  width="799.99" height="1134"src={ showBook.img}/>
+        //   <h1>{showBook.name}</h1>
+        //   <h2>{"by " +  showBook.author}</h2>
+        //   <p>{"Published on " +   showBook.date}</p>
 
-        </div>
+        // </div>
+    // )
+
+  if(showBook){
+    return(
+      <div>
+      <img  width="799.99" height="1134"src={ showBook.img}/>
+      <h1>{showBook.name}</h1>
+      <h2>{"by " +  showBook.author}</h2>
+      <p>{"Published on " +   showBook.date}</p>
+
+    </div>
+      
     )
+
+  }
+  else {
+  
+    return <h1>Loading...</h1>
+
+  }
+
+
+
+
 }
 
 

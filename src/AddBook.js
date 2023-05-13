@@ -4,27 +4,29 @@ import { useHistory,Route } from "react-router-dom";
 
 
 function AddBook({books,onForm}){
+  const history = useHistory()
     // const[books,setBooks]= useState([])
     const [name ,setName]= useState("")
     const [author,setAuthor]= useState("")
     const [date,setDate] = useState("")
     const [img,setImg] = useState("")
     // 
-   
+   const test = useState()
+   console.log(test)
 
     function handleSubmit(e){
         e.preventDefault()
        
         // console.log( e.target.name.value)
-        let formData = {
+        const formData = {
             name:name,
             author:author,
             date:date,
             img:img
         }
 
-        onForm(formData)
-
+        onForm(formData) //change onform name
+       history.push("/books")
 
 
         
