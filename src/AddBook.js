@@ -29,31 +29,30 @@ function AddBook({books,onApp}){
        history.push("/books")
 
 
-        
-
     }
    
-return(<div>
+return(
+  <div>
         
-        <h1>Add A Book</h1>
-        <form onSubmit={handleSubmit}> 
-        <div>
-            <input  type="text" name="name" value={name} onChange={e=> setName(e.target.value)
+    <h1>Add A Book</h1>
+    <form onSubmit={handleSubmit}> 
+      <div>
+        <input  type="text" name="name" value={name} onChange={e=> setName(e.target.value)
              } placeholder="Title"  />
-          </div>
-          <div>
-            <input required type="text" name="author" value={author} onChange={e=> setAuthor(e.target.value)} placeholder="Author" />
-          </div>
-          <div>
-            <input required type="text" name="date" value={date} onChange={e=>setDate(e.target.value)} placeholder="Date" />
-          </div>
-          <div>
-            <input required type="text" name="img" value={img} onChange={e=>setImg(e.target.value)} placeholder="Image" />
-          </div>
-          <input type="submit" value="Submit"  />
-        </form>
+      </div>
+      <div>
+        <input required type="text" name="author" value={author} onChange={e=> setAuthor(e.target.value)} placeholder="Author" />
+      </div>
+      <div>
+        <input required type="text" name="date" value={date} onChange={e=>setDate(e.target.value)} placeholder="Date" />
+      </div>
+      <div>
+        <input required type="text" name="img" value={img} onChange={e=>setImg(e.target.value)} placeholder="Image" />
+      </div>
+        <input type="submit" value="Submit"  />
+    </form>
         
-     </div>
+  </div>
     )
 }
 
