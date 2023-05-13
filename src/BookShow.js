@@ -14,15 +14,13 @@ function BookShow({books}){
 
   if(showBook){
     return(
-      <div>
+    <div>
       <img  width="799.99" height="1134"src={ showBook.img}/>
       <h1>{showBook.name}</h1>
       <h2>{"by " +  showBook.author}</h2>
       <p>{"Published on " +   showBook.date}</p>
 
-    </div>
-      
-    )
+    </div>)
 
   }
   else {

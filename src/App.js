@@ -19,7 +19,7 @@ function App() {
   const [books,setBooks] =  useState([])
   const history = useHistory()
   console.log(history)
-  // const match = useRouteMatch();
+
 
 
   useEffect(()=>{
@@ -44,7 +44,7 @@ function handleForm(formData){
   .then(dat=> { 
     setBooks([...books,dat])
     toast.success("You just added a book!");
-    }) //why is not pushing to booklist
+    }) 
   .catch(r=> toast.error("Oops, something went wrong " + r.message))
 }
 
@@ -57,7 +57,7 @@ function handleForm(formData){
       <NavBar/>
       <Switch>
       <Route exact path="/" component={Home}/>
-      <Route exact path="/form"> <AddBook books={books} onForm={handleForm}/> </Route>
+      <Route exact path="/form"> <AddBook books={books} onApp={handleForm}/> </Route>
       <Route exact path="/books" ><BooksList books={books} />
       </Route>
       <Route  path="/books/:id"> <BookShow books={books}/> </Route>
