@@ -34,6 +34,13 @@
       "date": "2023",
       "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.E5XRsXOXAY5pFnhMKDoU8gHaEo%26pid%3DApi&f=1&ipt=1973fb74db4a10b06673eb552e533bb447c45c6c510247ce09c5bcc7ecc50ccd&ipo=images",
       "id": 5
+    },
+    {
+      "name": "Purple Rain",
+      "author": "Prince",
+      "date": "1980",
+      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.qjN7jw43aqpvlyy2lKiy3wHaLH%26pid%3DApi&f=1&ipt=b2a09217e9d5aa1ea8649c00195b7414f0cefadbd6de121001cea673663b9027&ipo=images",
+      "id": 6
     }
   ]
 }

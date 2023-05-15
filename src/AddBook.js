@@ -3,7 +3,7 @@ import { useHistory,Route } from "react-router-dom";
 
 
 
-function AddBook({books,onApp}){
+function AddBook({onApp}){
   const history = useHistory()
     
     const [name ,setName]= useState("")
